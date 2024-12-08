@@ -1,0 +1,62 @@
+CLASSES
+
+Resource
+- name: string
+- slug: string
+- type?: string
+
+PlaceholderResource
+- resource: Resource
+- frequency: "high" | "medium" | "low"
+
+Country
+- name: string
+~- slug: string~
+- colour: string
+
+PlaceholderCountry
+- country: Country
+- dominance: number
+
+Placeholder
+- continental_id: number
+- locationY: number
+- locationX: number
+- name: string
+- isCoastal: boolean
+- resources: PlaceholderResource[]
+- adjacentPlaceholders: Placeholder[]
+- countries: PlaceholderCountry[]
+
+Continent
+- name: string
+- slug: string
+- placeholders: Placeholder[]
+- odds: number
+
+FEATURES
+
+- import initial data
+    - continents:
+        - name, slug
+    - countries:
+        - name, slug
+    - placeholders:
+        - continental_id, locations, countries
+
+- add resource randomizer
+
+- import adjacency and coasts
+    - import graph
+
+- add adjacency to randomizer
+
+- add saving
+    - file structure
+    - file saving
+    - file loading
+
+- add rankings (consider placeholder dominance)
+    - top countries by each resource
+    - top continents by each resource
+    

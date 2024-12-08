@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @font-face {
+        font-family: "Roboto Mono";
+        src: url("fonts/RobotoMono-VariableFont_wght.ttf");
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        font-family: 'Roboto Mono';
+      }
+      body {
+        width: 100vw;
+        height: 100dvh;
+        background-color: #121212
+      }
+      .container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+      }
+      .map-wrapper {
+        display: flex;
+        align-items: center;
+        flex: 1;
+      }
+      aside {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        padding: 16px;
+        width: 25%;
+        border-left: 1px solid white;
+        gap: 16px;
+      }
+      #map {
+        flex: 1;
+        height: 100%;
+      }
+      aside > div {
+        gap: 8px;
+      }
+      li {
+        list-style-type: none;
+      }
+      @media screen and (max-width: 768px) {
+        .container {
+          flex-direction: column;
+        }
+        aside {
+          width: 100%;
+          border-left: none;
+          border-top: 1px solid white;
+        }
+      }
+    </style>
+    <title>Tellus Placeholders</title>
+  </head>
+  <body>
+    <div class="container">
+      <main class="map-wrapper">
+        <svg
+          viewBox="0 0 4096 1972"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          id="map"
+          onmouseenter="handleMapHover">
+        >
+        </svg>
+      </main>
+      <aside>
+        <h1 id="placeholder-id">-</h1>
+        <ul id="country-list"></ul>
+        <h2>Recursos</h2>
+        <div>
+          <h4>Abundantes</h4>
+          <ul id="common-resources-list"></ul>
+        </div>
+        <div>
+          <h4>Comuns</h4>
+          <ul id="uncommon-resources-list"></ul>
+        </div>
+        <div>
+          <h4>Raros</h4>
+          <ul id="rare-resources-list"></ul>
+        </div>
+      </aside>
+    </div>
+    <script src="lib/svg-pan-zoom.min.js"></script>
+    <script src="./script.js" type="module"></script>
+  </body>
+</html>
+  
